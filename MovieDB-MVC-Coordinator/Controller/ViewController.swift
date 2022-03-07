@@ -15,6 +15,4 @@ class ViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
     }
 
-
 }
-

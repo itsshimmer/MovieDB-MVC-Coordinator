@@ -21,10 +21,4 @@ class MainCoordinator: Coordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
-    
-    func movieDetail() {
-        let vc = MovieViewController.instantiate()
-            vc.coordinator = self
-            navigationController.pushViewController(vc, animated: true)
-    }
 }
