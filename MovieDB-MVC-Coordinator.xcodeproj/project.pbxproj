@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		482EA3C927D68D340076C604 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 482EA3C827D68D340076C604 /* Movie.swift */; };
 		B4BFEBDB27D14403007919F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEBDA27D14403007919F6 /* AppDelegate.swift */; };
 		B4BFEBDD27D14403007919F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEBDC27D14403007919F6 /* SceneDelegate.swift */; };
 		B4BFEBDF27D14403007919F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BFEBDE27D14403007919F6 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		482EA3C827D68D340076C604 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B4BFEBD727D14403007919F6 /* MovieDB-MVC-Coordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MovieDB-MVC-Coordinator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BFEBDA27D14403007919F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4BFEBDC27D14403007919F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +47,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		482EA3C627D68D070076C604 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				482EA3C827D68D340076C604 /* Movie.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		482EA3C727D68D1C0076C604 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B4BFEBCE27D14403007919F6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,8 +81,8 @@
 		B4BFEBD927D14403007919F6 /* MovieDB-MVC-Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B4FD3D9F27D28115001DFE65 /* Model */,
-				B4FD3DA027D2811B001DFE65 /* View */,
+				482EA3C727D68D1C0076C604 /* View */,
+				482EA3C627D68D070076C604 /* Model */,
 				B4FD3DA127D28123001DFE65 /* Controller */,
 				B4BFEBDA27D14403007919F6 /* AppDelegate.swift */,
 				B4FD3DA527D28258001DFE65 /* MainCoordinator.swift */,
@@ -78,20 +95,6 @@
 				B4BFEBE827D14405007919F6 /* Info.plist */,
 			);
 			path = "MovieDB-MVC-Coordinator";
-			sourceTree = "<group>";
-		};
-		B4FD3D9F27D28115001DFE65 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		B4FD3DA027D2811B001DFE65 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B4FD3DA127D28123001DFE65 /* Controller */ = {
@@ -180,6 +183,7 @@
 				B4BFEBDF27D14403007919F6 /* ViewController.swift in Sources */,
 				B4FD3DA327D281EB001DFE65 /* Storyboarded.swift in Sources */,
 				B4BFEBDB27D14403007919F6 /* AppDelegate.swift in Sources */,
+				482EA3C927D68D340076C604 /* Movie.swift in Sources */,
 				B4BFEBDD27D14403007919F6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
