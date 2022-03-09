@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B4150F37260D060300F7A369 /* MovieDBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4150F36260D060300F7A369 /* MovieDBApp.swift */; };
+		B4150F37260D060300F7A369 /* MovieDBCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4150F36260D060300F7A369 /* MovieDBCoordinatorApp.swift */; };
 		B4150F39260D060300F7A369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4150F38260D060300F7A369 /* ContentView.swift */; };
 		B4150F3B260D060400F7A369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4150F3A260D060400F7A369 /* Assets.xcassets */; };
 		B4150F3E260D060400F7A369 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4150F3D260D060400F7A369 /* Preview Assets.xcassets */; };
@@ -17,7 +17,7 @@
 
 /* Begin PBXFileReference section */
 		B4150F33260D060300F7A369 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4150F36260D060300F7A369 /* MovieDBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBApp.swift; sourceTree = "<group>"; };
+		B4150F36260D060300F7A369 /* MovieDBCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBCoordinatorApp.swift; sourceTree = "<group>"; };
 		B4150F38260D060300F7A369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B4150F3A260D060400F7A369 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4150F3D260D060400F7A369 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			children = (
 				B4D11A46260D225B00914912 /* View */,
 				B4D11A41260D161800914912 /* Model */,
-				B4150F36260D060300F7A369 /* MovieDBApp.swift */,
+				B4150F36260D060300F7A369 /* MovieDBCoordinatorApp.swift */,
 				B4150F3A260D060400F7A369 /* Assets.xcassets */,
 				B4150F3F260D060400F7A369 /* Info.plist */,
 				B4150F3C260D060400F7A369 /* Preview Content */,
@@ -162,7 +162,7 @@
 			files = (
 				B4150F39260D060300F7A369 /* ContentView.swift in Sources */,
 				B44480E8260E6B2C00FF43CF /* DetailView.swift in Sources */,
-				B4150F37260D060300F7A369 /* MovieDBApp.swift in Sources */,
+				B4150F37260D060300F7A369 /* MovieDBCoordinatorApp.swift in Sources */,
 				B4D11A43260D164400914912 /* Movie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

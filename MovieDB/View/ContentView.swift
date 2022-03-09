@@ -21,7 +21,11 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(movies, id: \.id) { aMovie in
-                                NavigationLink(destination: DetailView(movie: aMovie)) {
+                                Button {
+                                    selectedMovie = aMovie
+                                    view = "DetailView"
+                                } label: {
+
                                     VStack {
                                         aMovie.image
                                             .resizable()
