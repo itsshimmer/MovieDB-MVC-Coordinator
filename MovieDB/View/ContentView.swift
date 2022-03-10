@@ -58,7 +58,7 @@ struct ContentView: View {
                     ScrollView {
                         VStack {
                             ForEach(movies, id: \.id) { aMovie in
-                                NavigationLink(destination: DetailView(movie: aMovie)) {
+                                changeScreen(currentScreen: "Main", movie: aMovie) {
                                     HStack {
                                         aMovie.image
                                             .resizable()
@@ -76,7 +76,7 @@ struct ContentView: View {
                                                 .lineLimit(3)
                                                 .padding(1)
                                                 .foregroundColor(Color.gray)
-                                                
+                                            
                                             HStack {
                                                 Image(systemName: "star")
                                                     .resizable()
