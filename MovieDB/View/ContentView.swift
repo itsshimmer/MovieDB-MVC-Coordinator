@@ -22,8 +22,7 @@ struct ContentView: View {
                         HStack {
                             ForEach(movies, id: \.id) { aMovie in
                                 Button {
-                                    selectedMovie = aMovie
-                                    view = "DetailView"
+                                    changeScreen(currentScreen: "ContentView", movie: aMovie)
                                 } label: {
 
                                     VStack {
