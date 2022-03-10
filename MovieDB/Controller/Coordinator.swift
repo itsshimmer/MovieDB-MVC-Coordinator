@@ -14,5 +14,12 @@ func changeScreen<L: View> (currentScreen: String, movie: Movie, label: () -> L)
     } label: {
         label()
     }
+}
 
+func changeScreen<L: View> (currentScreen: String, label: () -> L) -> some View {
+    NavigationLink {
+        ContentView()
+    } label: {
+        label()
+    }
 }

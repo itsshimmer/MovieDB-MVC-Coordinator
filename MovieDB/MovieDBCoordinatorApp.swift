@@ -12,14 +12,7 @@ struct MovieDBApp: App {
     var body: some Scene {
         
         WindowGroup {
-            switch(view) {
-            case "Main":
-                ContentView()
-            case "DetailView":
-                DetailView(movie: selectedMovie)
-            default:
-                ContentView()
-            }
+            ContentView()
         }
     }
 }
