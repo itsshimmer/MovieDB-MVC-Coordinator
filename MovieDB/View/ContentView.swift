@@ -21,10 +21,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(movies, id: \.id) { aMovie in
-                                Button {
-                                    changeScreen(currentScreen: "ContentView", movie: aMovie)
-                                } label: {
-
+                                changeScreen(currentScreen: "Main", movie: aMovie) {
                                     VStack {
                                         aMovie.image
                                             .resizable()
@@ -46,7 +43,6 @@ struct ContentView: View {
                                             Spacer()
                                         }
                                         .foregroundColor(Color.black)
-                                        
                                     }
                                 }
                             }

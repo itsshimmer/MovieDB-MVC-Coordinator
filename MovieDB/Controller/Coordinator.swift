@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
-var view = "Main"
-var selectedMovie: Movie = Movie(id: 0, title: "", description: "", year: 0, genre: "", rate: 0.0, duration: "")
-
-func changeScreen(currentScreen: String, movie: Movie) {
-    if currentScreen == "ContentView" {
-        selectedMovie = movie
-        view = "DetailView"
+func changeScreen<L: View> (currentScreen: String, movie: Movie, label: () -> L) -> some View {
+    NavigationLink {
+        DetailView(movie: movie)
+    } label: {
+        label()
     }
+
 }
