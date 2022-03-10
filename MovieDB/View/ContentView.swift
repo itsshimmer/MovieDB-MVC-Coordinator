@@ -7,6 +7,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var coordinator = Coordinator()
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -21,7 +24,7 @@ struct ContentView: View {
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
                             ForEach(movies, id: \.id) { aMovie in
-                                changeScreen(currentScreen: "Main", movie: aMovie) {
+                                coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
                                     VStack {
                                         aMovie.image
                                             .resizable()
@@ -58,7 +61,7 @@ struct ContentView: View {
                     ScrollView {
                         VStack {
                             ForEach(movies, id: \.id) { aMovie in
-                                changeScreen(currentScreen: "Main", movie: aMovie) {
+                                coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
                                     HStack {
                                         aMovie.image
                                             .resizable()

@@ -8,18 +8,22 @@
 import Foundation
 import SwiftUI
 
-func changeScreen<L: View> (currentScreen: String, movie: Movie, label: () -> L) -> some View {
-    NavigationLink {
-        DetailView(movie: movie)
-    } label: {
-        label()
+class Coordinator {
+    
+    func changeScreen<L: View> (currentScreen: String, movie: Movie, label: () -> L) -> some View {
+        NavigationLink {
+            DetailView(movie: movie)
+        } label: {
+            label()
+        }
     }
-}
 
-func changeScreen<L: View> (currentScreen: String, label: () -> L) -> some View {
-    NavigationLink {
-        ContentView()
-    } label: {
-        label()
+    func changeScreen<L: View> (currentScreen: String, label: () -> L) -> some View {
+        NavigationLink {
+            ContentView()
+        } label: {
+            label()
+        }
     }
+    
 }
