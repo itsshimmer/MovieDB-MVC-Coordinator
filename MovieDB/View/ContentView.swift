@@ -24,57 +24,72 @@ struct ContentView: View {
                 VStack {
                     Divider()
                     HStack {
-                        Text("Now Playing")
+                        Text("Popular Movies")
+                            .fontWeight(.semibold)
+                            .padding(.leading, 5)
                         Spacer()
-                        Text("See All")
                     }
                     .padding(5)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            ForEach(contentController.nowPlayingMovies, id: \.id) { aMovie in
-                                coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
+                    VStack {
+                        ForEach(contentController.popularMovies.prefix(2), id: \.id) { aMovie in
+                            coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
+                                HStack {
+                                    aMovie.image
+                                        .resizable()
+                                        .cornerRadius(25)
+                                        .frame(width: 75, height: 125)
+                                        .padding(.leading, 5)
                                     VStack {
-                                        aMovie.image
-                                            .resizable()
-                                            .cornerRadius(25)
-                                            .frame(width: 125, height: 200)
-                                            .padding(5)
-                                        
-                                        Text(aMovie.title)
-                                            .foregroundColor(Color.black)
-                                        
-                                        HStack() {
+                                        HStack {
+                                            Text(aMovie.title)
+                                                .foregroundColor(Color.black)
+                                            Spacer()
+                                        }
+                                        Text(aMovie.description)
+                                            .font(.footnote)
+                                            .lineLimit(3)
+                                            .padding(1)
+                                            .foregroundColor(Color.gray)
+                                            .multilineTextAlignment(.leading)
+                                        HStack {
                                             Image(systemName: "star")
                                                 .resizable()
-                                                .frame(width: 10, height: 10)
-                                                .padding(5)
+                                                .frame(width: 11, height: 11)
+                                                .padding(.leading, 2)
+                                                .foregroundColor(Color.gray)
                                             Text(String(aMovie.rate))
                                                 .font(.caption)
                                                 .bold()
+                                                .foregroundColor(Color.gray)
                                             Spacer()
                                         }
                                         .foregroundColor(Color.black)
+                                        
                                     }
+                                    
+                                    Spacer()
                                 }
+                                .padding(.leading, 5)
                             }
-                            
                         }
+                    }
                         Divider()
                         HStack {
-                            Text("Popular Movies")
-                                .padding(5)
+                            Text("Now Playing")
+                                .fontWeight(.semibold)
+                                .padding(.leading, 10)
                             Spacer()
                         }
                         ScrollView {
                             VStack {
-                                ForEach(contentController.popularMovies, id: \.id) { aMovie in
+                                ForEach(contentController.nowPlayingMovies, id: \.id) { aMovie in
                                     coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
                                         HStack {
                                             aMovie.image
                                                 .resizable()
                                                 .cornerRadius(25)
                                                 .frame(width: 75, height: 125)
-                                                .padding(5)
+                                                .padding(.leading, 5)
                                             VStack {
                                                 HStack {
                                                     Text(aMovie.title)
@@ -86,34 +101,33 @@ struct ContentView: View {
                                                     .lineLimit(3)
                                                     .padding(1)
                                                     .foregroundColor(Color.gray)
-                                                
+                                                    .multilineTextAlignment(.leading)
                                                 HStack {
                                                     Image(systemName: "star")
                                                         .resizable()
-                                                        .frame(width: 10, height: 10)
-                                                        .padding(5)
+                                                        .frame(width: 11, height: 11)
+                                                        .padding(.leading, 2)
+                                                        .foregroundColor(Color.gray)
                                                     Text(String(aMovie.rate))
                                                         .font(.caption)
                                                         .bold()
+                                                        .foregroundColor(Color.gray)
                                                     Spacer()
                                                 }
                                                 .foregroundColor(Color.black)
-                                                
                                             }
-                                            
                                             Spacer()
                                         }
+                                        .padding(.leading, 5)
                                     }
                                 }
                                 
                             }
                         }
-                    }
                     Spacer()
                 }
             }
-            //Spacer()
-            .navigationTitle("MovieDB")
+            .navigationTitle("Movies")
         }
         
         
