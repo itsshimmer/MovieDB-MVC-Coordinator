@@ -20,7 +20,7 @@ class Coordinator {
 
     func changeScreen<L: View> (currentScreen: String, label: () -> L) -> some View {
         NavigationLink {
-            ContentView()
+            ContentView(coordinator: Coordinator(), contentController: ContentController())
         } label: {
             label()
         }

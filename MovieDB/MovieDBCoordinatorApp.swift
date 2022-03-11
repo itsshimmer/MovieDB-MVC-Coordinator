@@ -12,7 +12,7 @@ struct MovieDBApp: App {
     var body: some Scene {
         
         WindowGroup {
-            ContentView()
+            ContentView(coordinator: Coordinator(), contentController: ContentController())
         }
     }
 }

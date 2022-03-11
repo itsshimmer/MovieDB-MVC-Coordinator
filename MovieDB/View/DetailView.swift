@@ -23,7 +23,7 @@ struct DetailView: View {
                 VStack(alignment: .leading) {
                     Text(movie.title)
                         .bold()
-                    Text(movie.genre)
+                    Text("Action")
                         .font(.subheadline)
                     
                     
@@ -62,6 +62,6 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(movie: movies[0])
+        DetailView(movie: Movie(id: 0, title: "", rate: 5.0, overview: "", genreIds: [2], posterPath: "", image: Image("placeHolder")))
     }
 }

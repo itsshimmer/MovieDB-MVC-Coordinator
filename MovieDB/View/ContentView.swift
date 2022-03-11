@@ -8,7 +8,15 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var coordinator = Coordinator()
+    var coordinator: Coordinator
+    var contentController: ContentController
+    
+    init(coordinator: Coordinator, contentController: ContentController){
+        self.coordinator = coordinator
+        self.contentController = contentController
+        contentController.semaphore.wait()
+        contentController.semaphore.wait()
+    }
     
     var body: some View {
         NavigationView {
@@ -23,7 +31,7 @@ struct ContentView: View {
                     .padding(5)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            ForEach(movies, id: \.id) { aMovie in
+                            ForEach(contentController.nowPlayingMovies, id: \.id) { aMovie in
                                 coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
                                     VStack {
                                         aMovie.image
@@ -49,54 +57,55 @@ struct ContentView: View {
                                     }
                                 }
                             }
+                            
                         }
-                        
-                    }
-                    Divider()
-                    HStack {
-                        Text("Popular Movies")
-                            .padding(5)
-                        Spacer()
-                    }
-                    ScrollView {
-                        VStack {
-                            ForEach(movies, id: \.id) { aMovie in
-                                coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
-                                    HStack {
-                                        aMovie.image
-                                            .resizable()
-                                            .cornerRadius(25)
-                                            .frame(width: 75, height: 125)
-                                            .padding(5)
-                                        VStack {
-                                            HStack {
-                                                Text(aMovie.title)
-                                                    .foregroundColor(Color.black)
-                                                Spacer()
+                        Divider()
+                        HStack {
+                            Text("Popular Movies")
+                                .padding(5)
+                            Spacer()
+                        }
+                        ScrollView {
+                            VStack {
+                                ForEach(contentController.popularMovies, id: \.id) { aMovie in
+                                    coordinator.changeScreen(currentScreen: "Main", movie: aMovie) {
+                                        HStack {
+                                            aMovie.image
+                                                .resizable()
+                                                .cornerRadius(25)
+                                                .frame(width: 75, height: 125)
+                                                .padding(5)
+                                            VStack {
+                                                HStack {
+                                                    Text(aMovie.title)
+                                                        .foregroundColor(Color.black)
+                                                    Spacer()
+                                                }
+                                                Text(aMovie.description)
+                                                    .font(.footnote)
+                                                    .lineLimit(3)
+                                                    .padding(1)
+                                                    .foregroundColor(Color.gray)
+                                                
+                                                HStack {
+                                                    Image(systemName: "star")
+                                                        .resizable()
+                                                        .frame(width: 10, height: 10)
+                                                        .padding(5)
+                                                    Text(String(aMovie.rate))
+                                                        .font(.caption)
+                                                        .bold()
+                                                    Spacer()
+                                                }
+                                                .foregroundColor(Color.black)
+                                                
                                             }
-                                            Text(aMovie.description)
-                                                .font(.footnote)
-                                                .lineLimit(3)
-                                                .padding(1)
-                                                .foregroundColor(Color.gray)
                                             
-                                            HStack {
-                                                Image(systemName: "star")
-                                                    .resizable()
-                                                    .frame(width: 10, height: 10)
-                                                    .padding(5)
-                                                Text(String(aMovie.rate))
-                                                    .font(.caption)
-                                                    .bold()
-                                                Spacer()
-                                            }
-                                            .foregroundColor(Color.black)
-                                            
+                                            Spacer()
                                         }
-                                        
-                                        Spacer()
                                     }
                                 }
+                                
                             }
                         }
                     }
@@ -113,6 +122,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(coordinator: Coordinator(), contentController: ContentController())
     }
 }

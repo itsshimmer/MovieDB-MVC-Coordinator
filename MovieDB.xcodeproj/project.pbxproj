@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48DC587527DAF2DC0027BE9D /* ContentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48DC587427DAF2DC0027BE9D /* ContentController.swift */; };
 		B4150F37260D060300F7A369 /* MovieDBCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4150F36260D060300F7A369 /* MovieDBCoordinatorApp.swift */; };
 		B4150F39260D060300F7A369 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4150F38260D060300F7A369 /* ContentView.swift */; };
 		B4150F3B260D060400F7A369 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4150F3A260D060400F7A369 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48DC587427DAF2DC0027BE9D /* ContentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentController.swift; sourceTree = "<group>"; };
 		B4150F33260D060300F7A369 /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4150F36260D060300F7A369 /* MovieDBCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBCoordinatorApp.swift; sourceTree = "<group>"; };
 		B4150F38260D060300F7A369 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CDE60227DA6037001396BB /* Coordinator.swift */,
+				48DC587427DAF2DC0027BE9D /* ContentController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4150F39260D060300F7A369 /* ContentView.swift in Sources */,
+				48DC587527DAF2DC0027BE9D /* ContentController.swift in Sources */,
 				B44480E8260E6B2C00FF43CF /* DetailView.swift in Sources */,
 				B4CDE60327DA6037001396BB /* Coordinator.swift in Sources */,
 				B4150F37260D060300F7A369 /* MovieDBCoordinatorApp.swift in Sources */,
